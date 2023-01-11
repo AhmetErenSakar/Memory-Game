@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  margin-bottom: 25px;
+}
+.playground {
+  height: 725px;
+  width: 710px;
+  background-color: rgb(199, 198, 198);
+}
+.card {
+  background-color: #fff;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  transform: rotateY(180deg);
+  animation: 2s hideCard linear;
+}
+@keyframes hideCard {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  transform: scale(0);
+  animation: 1s hideImage linear;
+}
+
+@keyframes hideImage {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.card.active {
+  transform: rotateY(0);
+}
+.card.active img {
+  transform: scale(1);
+}
+.card.correct {
+  background-color: green;
+}
